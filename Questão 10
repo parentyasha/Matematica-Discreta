@@ -1,0 +1,29 @@
+A = {1, 2, 3, 4, 5, 6}
+B = {2, 4, 6, 8, 10}
+C = {1, 2}
+
+def pertinencia(A, B):
+    valor = int(input('Insira um número: '))
+    if valor in A and valor in B:
+        return str(valor) + ' pertence ao conjunto A e ao conjunto B'
+    elif valor in A and valor not in B:
+        return str(valor) + ' pertence ao conjunto A mas não pertence ao conjunto B'
+    elif valor not in B and valor not in A:
+        return str(valor) + ' pertence ao conjunto B mas não pertence ao conjunto A'
+    else:
+        return str(valor) + ' não pertence nem ao conjunto A e nem ao conjunto B'
+
+def continencia(A, C):
+    return 'C é subconjunto de A? ' + str(C.issubset(A))
+
+print(pertinencia(A, B))
+print('\n')
+print(continencia(A, C))
+print('\n')
+print('Outras operações: ')
+#Outras operações
+print('União: ', A.union(B))
+print('Interseção: ', A.intersection(B))
+print('Diferença: ', A.difference(B))
+print('Diferença simétrica: ', A.symmetric_difference(B))
+print('Transformar conjunto A em lista: ', list(A))
